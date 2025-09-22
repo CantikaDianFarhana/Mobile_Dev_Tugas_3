@@ -26,237 +26,239 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: primaryColor,
       resizeToAvoidBottomInset: false,
-      body: SafeArea(
-        bottom: false,
-        child: Column(
-          children: [
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.all(16),
-                child: Column(
-                  spacing: 32,
-                  children: [
-                    Align(
-                      alignment: Alignment.centerRight,
-                      child: IconButton(
-                        onPressed: () {},
-                        icon: Icon(Icons.list_rounded, color: Colors.white),
+      body: SingleChildScrollView(
+        child: SizedBox(
+          height: MediaQuery.of(context).size.height,
+          child: Column(
+            children: [
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.all(16),
+                  child: Column(
+                    spacing: 32,
+                    children: [
+                      Align(
+                        alignment: Alignment.centerRight,
+                        child: IconButton(
+                          onPressed: () {},
+                          icon: Icon(Icons.list_rounded, color: Colors.white),
+                        ),
                       ),
-                    ),
-                    Text(
-                      'Good Morning, ${widget.user.name}',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 28,
-                        fontWeight: FontWeight.bold,
+                      Text(
+                        'Good Morning, ${widget.user.name}',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 28,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        maxLines: 2,
                       ),
-                      maxLines: 2,
-                    ),
-                    TextField(
-                      decoration: InputDecoration(
-                        fillColor: Colors.white,
-                        filled: true,
-                        prefixIcon: Icon(Icons.search),
-                        hintText: 'Search...',
-                        border: OutlineInputBorder(),
-                        focusedBorder: OutlineInputBorder(),
+                      TextField(
+                        decoration: InputDecoration(
+                          fillColor: Colors.white,
+                          filled: true,
+                          prefixIcon: Icon(Icons.search),
+                          hintText: 'Search...',
+                          border: OutlineInputBorder(),
+                          focusedBorder: OutlineInputBorder(),
+                        ),
                       ),
-                    ),
-                    Expanded(
-                      child: Column(
-                        spacing: 8,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              InkWell(
-                                onTap: () {
-                                  final cake = Cake(
-                                    name: 'Birthday Cake',
-                                    image: 'assets/images/dummy_1.jpg',
-                                    description: "Kue ulang tahun dengan krim putih "
-                                                  "bergelombang dan lilin berwarna pink, tampil manis dan klasik",
-                                  );
-                                  Navigator.pushNamed(
-                                    context,
-                                    DetailHome.routeName,
-                                    arguments: cake,
-                                  );
-                                },
-                                child: Container(
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.4,
-                                  height:
-                                      MediaQuery.of(context).size.width * 0.4,
-                                  padding: EdgeInsets.all(12),
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(8),
-                                  ),
-                                  child: Column(
-                                    spacing: 4,
-                                    children: [
-                                      Expanded(
-                                        child: Image.asset(
-                                          'assets/images/dummy_1.jpg',
+                      Expanded(
+                        child: Column(
+                          spacing: 8,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                InkWell(
+                                  onTap: () {
+                                    final cake = Cake(
+                                      name: 'Birthday Cake',
+                                      image: 'assets/images/dummy_1.jpg',
+                                      description: "Kue ulang tahun dengan krim putih "
+                                                    "bergelombang dan lilin berwarna pink, tampil manis dan klasik",
+                                    );
+                                    Navigator.pushNamed(
+                                      context,
+                                      DetailHome.routeName,
+                                      arguments: cake,
+                                    );
+                                  },
+                                  child: Container(
+                                    width:
+                                        MediaQuery.of(context).size.width * 0.4,
+                                    height:
+                                        MediaQuery.of(context).size.width * 0.4,
+                                    padding: EdgeInsets.all(12),
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                    child: Column(
+                                      spacing: 4,
+                                      children: [
+                                        Expanded(
+                                          child: Image.asset(
+                                            'assets/images/dummy_1.jpg',
+                                          ),
                                         ),
-                                      ),
-                                      Text(
-                                        'Birthday Cake',
-                                        style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.bold,
+                                        Text(
+                                          'Birthday Cake',
+                                          style: TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.bold,
+                                          ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
                                 ),
-                              ),
-                              InkWell(
-                                onTap: () {
-                                  final cake = Cake(
-                                    name: 'Cake 2',
-                                    image: 'assets/images/dummy_2.jpg',
-                                    description: dummyText,
-                                  );
-                                  Navigator.pushNamed(
-                                    context,
-                                    DetailHome.routeName,
-                                    arguments: cake,
-                                  );
-                                },
-                                child: Container(
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.4,
-                                  height:
-                                      MediaQuery.of(context).size.width * 0.4,
-                                  padding: EdgeInsets.all(12),
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(8),
-                                  ),
-                                  child: Column(
-                                    spacing: 4,
-                                    children: [
-                                      Expanded(
-                                        child: Image.asset(
-                                          'assets/images/dummy_2.jpg',
+                                InkWell(
+                                  onTap: () {
+                                    final cake = Cake(
+                                      name: 'Cake 2',
+                                      image: 'assets/images/dummy_2.jpg',
+                                      description: dummyText,
+                                    );
+                                    Navigator.pushNamed(
+                                      context,
+                                      DetailHome.routeName,
+                                      arguments: cake,
+                                    );
+                                  },
+                                  child: Container(
+                                    width:
+                                        MediaQuery.of(context).size.width * 0.4,
+                                    height:
+                                        MediaQuery.of(context).size.width * 0.4,
+                                    padding: EdgeInsets.all(12),
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                    child: Column(
+                                      spacing: 4,
+                                      children: [
+                                        Expanded(
+                                          child: Image.asset(
+                                            'assets/images/dummy_2.jpg',
+                                          ),
                                         ),
-                                      ),
-                                      Text(
-                                        'Classic Cake',
-                                        style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.bold,
+                                        Text(
+                                          'Classic Cake',
+                                          style: TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.bold,
+                                          ),
                                         ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              InkWell(
-                                onTap: () {
-                                  final cake = Cake(
-                                    name: 'Cake 3',
-                                    image: 'assets/images/dummy_3.jpg',
-                                    description: dummyText,
-                                  );
-                                  Navigator.pushNamed(
-                                    context,
-                                    DetailHome.routeName,
-                                    arguments: cake,
-                                  );
-                                },
-                                child: Container(
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.4,
-                                  height:
-                                      MediaQuery.of(context).size.width * 0.4,
-                                  padding: EdgeInsets.all(12),
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(8),
-                                  ),
-                                  child: Column(
-                                    spacing: 4,
-                                    children: [
-                                      Expanded(
-                                        child: Image.asset(
-                                          'assets/images/dummy_3.jpg',
-                                        ),
-                                      ),
-                                      Text(
-                                        'Special Cake',
-                                        style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
                                 ),
-                              ),
-                              InkWell(
-                                onTap: () {
-                                  final cake = Cake(
-                                    name: 'Cake 4',
-                                    image: 'assets/images/dummy_4.jpg',
-                                    description: dummyText,
-                                  );
-                                  Navigator.pushNamed(
-                                    context,
-                                    DetailHome.routeName,
-                                    arguments: cake,
-                                  );
-                                },
-                                child: Container(
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.4,
-                                  height:
-                                      MediaQuery.of(context).size.width * 0.4,
-                                  padding: EdgeInsets.all(12),
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(8),
-                                  ),
-                                  child: Column(
-                                    spacing: 4,
-                                    children: [
-                                      Expanded(
-                                        child: Image.asset(
-                                          'assets/images/dummy_4.jpg',
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                InkWell(
+                                  onTap: () {
+                                    final cake = Cake(
+                                      name: 'Cake 3',
+                                      image: 'assets/images/dummy_3.jpg',
+                                      description: dummyText,
+                                    );
+                                    Navigator.pushNamed(
+                                      context,
+                                      DetailHome.routeName,
+                                      arguments: cake,
+                                    );
+                                  },
+                                  child: Container(
+                                    width:
+                                        MediaQuery.of(context).size.width * 0.4,
+                                    height:
+                                        MediaQuery.of(context).size.width * 0.4,
+                                    padding: EdgeInsets.all(12),
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                    child: Column(
+                                      spacing: 4,
+                                      children: [
+                                        Expanded(
+                                          child: Image.asset(
+                                            'assets/images/dummy_3.jpg',
+                                          ),
                                         ),
-                                      ),
-                                      Text(
-                                        'Wedding Cake',
-                                        style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.bold,
+                                        Text(
+                                          'Special Cake',
+                                          style: TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.bold,
+                                          ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
                                 ),
-                              ),
-                            ],
-                          ),
-                        ],
+                                InkWell(
+                                  onTap: () {
+                                    final cake = Cake(
+                                      name: 'Cake 4',
+                                      image: 'assets/images/dummy_4.jpg',
+                                      description: dummyText,
+                                    );
+                                    Navigator.pushNamed(
+                                      context,
+                                      DetailHome.routeName,
+                                      arguments: cake,
+                                    );
+                                  },
+                                  child: Container(
+                                    width:
+                                        MediaQuery.of(context).size.width * 0.4,
+                                    height:
+                                        MediaQuery.of(context).size.width * 0.4,
+                                    padding: EdgeInsets.all(12),
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                    child: Column(
+                                      spacing: 4,
+                                      children: [
+                                        Expanded(
+                                          child: Image.asset(
+                                            'assets/images/dummy_4.jpg',
+                                          ),
+                                        ),
+                                        Text(
+                                          'Wedding Cake',
+                                          style: TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
